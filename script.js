@@ -36,6 +36,7 @@ function gameStart() {
     createFood();
     drawFood();
     nextTick();
+    console.log(gameHeight, gameWidth);
 };
 function nextTick() {
     if (running) {

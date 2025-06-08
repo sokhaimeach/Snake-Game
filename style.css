@@ -6,13 +6,13 @@
 }
 #scoreText {
     font: "Permanent Marker", cursive;
-    font-size: 100px;
+    font-size: 70px;
 }
 #resetBtn {
     font: "Permanent Marker", cursive;
-    font-size: 22px;
-    width: 100px;
-    height: 50px;
+    font-size: 16px;
+    width: 70px;
+    height: 30px;
     border: 4px solid black;
     border-radius: 15px;
     cursor: pointer;
