@@ -2,6 +2,10 @@ const gameBoard = document.querySelector("#gameBoard");
 const ctx = gameBoard.getContext("2d");
 const scoreText = document.querySelector("#scoreText");
 const resetBtn = document.querySelector("#resetBtn");
+const goUp = document.querySelector("#upBtn");
+const goDown = document.querySelector("#downBtn");
+const goLeft = document.querySelector("#leftBtn");
+const goRight = document.querySelector("#rightBtn");
 const gameWidth = gameBoard.width;
 const gameHeight = gameBoard.height;
 const boardBackground = "white";
@@ -27,6 +31,23 @@ let snake = [
 
 window.addEventListener("keydown", changeDirection);
 resetBtn.addEventListener("click", resetGame);
+
+goUp.addEventListener("click", () => {
+    xVelocity = 0;
+    yVelocity = -unitSize;
+});
+goDown.addEventListener("click", () => {
+    xVelocity = 0;
+    yVelocity = unitSize;
+});
+goLeft.addEventListener("click", () => {
+    xVelocity = -unitSize;
+    yVelocity = 0;
+});
+goRight.addEventListener("click", () => {
+    xVelocity = unitSize;
+    yVelocity = 0;
+});
 
 gameStart();
 
@@ -108,6 +129,7 @@ function drawSnake() {
 function changeDirection(event) {
     const keyPressed = event.keyCode;
     // console.log(keyPressed);
+
     const LEFT = 37;
     const UP = 38;
     const RIGHT = 39;
