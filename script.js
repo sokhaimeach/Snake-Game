@@ -20,7 +20,7 @@ let yVelocity = 0;
 let foodX;
 let foodY;
 let score = 0;
-let speed = 80;
+let speed = 120;
 let snake = [
     { x: unitSize * 4, y: 0 },
     { x: unitSize * 3, y: 0 },
