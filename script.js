@@ -31,23 +31,36 @@ let snake = [
 
 window.addEventListener("keydown", changeDirection);
 resetBtn.addEventListener("click", resetGame);
+goUp.addEventListener("click", changeDirectionByButton);
+goDown.addEventListener("click", changeDirectionByButton);
+goLeft.addEventListener("click", changeDirectionByButton);
+goRight.addEventListener("click", changeDirectionByButton);
 
-goUp.addEventListener("click", () => {
-    xVelocity = 0;
-    yVelocity = -unitSize;
-});
-goDown.addEventListener("click", () => {
-    xVelocity = 0;
-    yVelocity = unitSize;
-});
-goLeft.addEventListener("click", () => {
-    xVelocity = -unitSize;
-    yVelocity = 0;
-});
-goRight.addEventListener("click", () => {
-    xVelocity = unitSize;
-    yVelocity = 0;
-});
+
+function changeDirectionByButton() {
+    const goingUp = (yVelocity == -unitSize);
+    const goingDown = (yVelocity == unitSize);
+    const goingLeft = (xVelocity == -unitSize);
+    const goingRight = (xVelocity == unitSize);
+
+    if (this.id === "upBtn" && !goingDown) {
+        xVelocity = 0;
+        yVelocity = -unitSize;
+    }
+
+    if (this.id === "downBtn" && !goingUp) {
+        xVelocity = 0;
+        yVelocity = unitSize;
+    }
+    if (this.id === "leftBtn" && !goingRight) {
+        xVelocity = -unitSize;
+        yVelocity = 0;
+    }
+    if (this.id === "rightBtn" && !goingLeft) {
+        xVelocity = unitSize;
+        yVelocity = 0;
+    }
+}
 
 gameStart();
 
